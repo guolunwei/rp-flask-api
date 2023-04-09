@@ -1,7 +1,8 @@
 # syntax=docker/dockerfile:1
 
 FROM python:3-alpine
-COPY . .
+WORKDIR /app
+COPY app/ .
 RUN python -m venv venv && \
 source venv/bin/activate && \
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple \
